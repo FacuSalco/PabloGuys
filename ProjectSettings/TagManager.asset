@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Fire
   - Ground
+  - Damage
+  - ExtraTime
+  - Trap
   layers:
   - Default
   - TransparentFX

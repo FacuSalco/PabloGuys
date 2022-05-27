@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(hasJump);
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             transform.Translate(0, 0, movementSpeed);
@@ -55,7 +54,6 @@ public class PlayerMovement : MonoBehaviour
         if (col.gameObject.tag == "Ground")
         {
             hasJump = true;
-            Debug.Log("Esta tocando el piso");
         }
     }
 }
