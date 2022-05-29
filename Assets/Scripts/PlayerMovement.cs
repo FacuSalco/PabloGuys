@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    float movementSpeed = 0.1f, rotationSpeed = 4f;
-    public float jumpForce;
+    public float movementSpeed = 0.1f, rotationSpeed = 4f, jumpForce;
     public Rigidbody rb;
     bool hasJump;
+    public GameObject CamaraNormal, CamaraSprint;
+
+    //GetComponent<Renderer>().material = rosa;
+    //para cambiar de material
 
     void Start()
     {
@@ -17,6 +20,20 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            CamaraSprint.SetActive(true);
+            CamaraNormal.SetActive(false);
+            movementSpeed = 0.2f;
+        }
+        else
+        {
+            CamaraSprint.SetActive(false);
+            CamaraNormal.SetActive(true);
+            movementSpeed = 0.1f;
+        }
+
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             transform.Translate(0, 0, movementSpeed);
@@ -37,10 +54,7 @@ public class PlayerMovement : MonoBehaviour
             transform.Rotate(0, -rotationSpeed, 0);
         }
 
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftShift))
-        {
-            transform.Translate(0, 0, 0.025f);
-        }
+       
 
         if (Input.GetKeyDown(KeyCode.Space) && hasJump)
         {

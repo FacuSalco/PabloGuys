@@ -8,7 +8,7 @@ TagManager:
   - Ground
   - Damage
   - ExtraTime
-  - Trap
+  - CheckPoint1
   layers:
   - Default
   - TransparentFX
