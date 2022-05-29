@@ -18,6 +18,7 @@ public class PlayerCollision : MonoBehaviour
         spawnx = 0;
         spawny = 1.6f;
         spawnz = 0;
+        txtcheckpoint1.SetActive(false);
 
     }
 
@@ -26,7 +27,7 @@ public class PlayerCollision : MonoBehaviour
         tiempo -= Time.deltaTime;
         timer.text = tiempo.ToString("f0");
 
-        if (transform.position.y < 0)
+        if (transform.position.y < -1)
         {
             transform.position = new Vector3(spawnx, spawny, spawnz);
             transform.eulerAngles = new Vector3(0, 0, 0);
@@ -178,6 +179,11 @@ public class PlayerCollision : MonoBehaviour
             spawny = 5.01f;
             spawnz = 102.97f;
             txtcheckpoint1.SetActive(false);
+        }
+
+        if (col.gameObject.name == "PlatMedio")
+        {
+            txtcheckpoint1.SetActive(true);
         }
 
     }

@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         {
             CamaraSprint.SetActive(true);
             CamaraNormal.SetActive(false);
-            movementSpeed = 0.2f;
+            movementSpeed = 0.15f;
         }
         else
         {
@@ -54,8 +54,6 @@ public class PlayerMovement : MonoBehaviour
             transform.Rotate(0, -rotationSpeed, 0);
         }
 
-       
-
         if (Input.GetKeyDown(KeyCode.Space) && hasJump)
         {
             hasJump = false;
@@ -69,5 +67,8 @@ public class PlayerMovement : MonoBehaviour
         {
             hasJump = true;
         }
+
+
+
     }
 }
