@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerCollision : MonoBehaviour
 {
     public Text timer, gameOver, gameOverR;
-    public GameObject player, camara, reloj, PlatTrap1, PlatTrap2, PlatTrap3, PlatTrap4, PlatTrap5, PlatTrap6, txtcheckpoint1;
+    public GameObject player, camara, mainCamara, reloj, PlatTrap1, PlatTrap2, PlatTrap3, PlatTrap4, PlatTrap5, PlatTrap6, txtcheckpoint1;
     float tiempo = 60, restarSegundos = 10, tiempotrampa = 0;
     float spawnx, spawny, spawnz;//Cambiar para que sean las variables donde spawnee y crear nuevas para hacer checkpoints
     public Material rosa;
@@ -39,7 +39,7 @@ public class PlayerCollision : MonoBehaviour
             gameOver.text = "Game Over";
             gameOverR.text = "Game Over";
             player.SetActive(false);
-            camara.SetActive(true);
+            mainCamara.SetActive(true);
             timer.text = "";
             
         }

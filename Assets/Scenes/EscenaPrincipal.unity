@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -707,7 +707,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
+  m_Radius: 0.7
   m_Height: 31.207096
   m_Direction: 1
   m_Center: {x: 0.000000055145573, y: 0.000008604665, z: -0.00000011029115}
@@ -997,6 +997,7 @@ MonoBehaviour:
   gameOverR: {fileID: 1114369380}
   player: {fileID: 372576046}
   camara: {fileID: 1870077590}
+  mainCamara: {fileID: 482855806}
   reloj: {fileID: 187607679}
   PlatTrap1: {fileID: 1514472856}
   PlatTrap2: {fileID: 1335376480}
@@ -1131,7 +1132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &482855807
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1243,7 +1244,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
+  m_Radius: 0.7
   m_Height: 31.207096
   m_Direction: 1
   m_Center: {x: 0.000000055145573, y: 0.000008604665, z: -0.00000011029115}
@@ -3243,6 +3244,7 @@ MonoBehaviour:
   gameOverR: {fileID: 1114369380}
   player: {fileID: 1309803929}
   camara: {fileID: 187626532}
+  mainCamara: {fileID: 0}
   reloj: {fileID: 187607679}
   PlatTrap1: {fileID: 1514472856}
   PlatTrap2: {fileID: 1335376480}
