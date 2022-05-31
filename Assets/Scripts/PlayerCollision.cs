@@ -9,7 +9,7 @@ public class PlayerCollision : MonoBehaviour
     public Text timer, gameOver, gameOverR;
     public GameObject player, camara, mainCamara, reloj, PlatTrap1, PlatTrap2, PlatTrap3, PlatTrap4, PlatTrap5, PlatTrap6, txtcheckpoint1, resetbutton;
     float tiempo = 60, restarSegundos = 10, tiempotrampa = 0.5f;
-    float spawnx, spawny, spawnz;//Cambiar para que sean las variables donde spawnee y crear nuevas para hacer checkpoints
+    float spawnx, spawny, spawnz;
     public Material rosa;
     int i1, i2, i3, i4, i5, i6;
 
@@ -24,22 +24,28 @@ public class PlayerCollision : MonoBehaviour
 
     void Update()
     {
-        tiempo -= Time.deltaTime;
-        timer.text = tiempo.ToString("f0");
+
+        if (PauseScript.pausa == false)//Si no esta pausado el juego
+        {
+            tiempo -= Time.deltaTime;
+            timer.text = tiempo.ToString("f0");
+        }
+
+
 
         if (transform.position.y < -1)
         {
             respawn();
         }
 
-        if (tiempo < 0)
+        if (tiempo < 0) //CUANDO PIERDE
         {
             gameOver.text = "Game Over";
             gameOverR.text = "Game Over";
             player.SetActive(false);
             mainCamara.SetActive(true);
-            timer.text = "";
             resetbutton.SetActive(true);
+            //timer.text = "";
 
         }
 

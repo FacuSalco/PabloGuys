@@ -23,8 +23,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (PauseScript.pausa == false)
+        {
+
+            if (Input.GetKey(KeyCode.LeftShift))
         {
             CamaraSprint.SetActive(true);
             CamaraNormal.SetActive(false);
@@ -62,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
             hasJump = false;
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+    }
 
     }
     void OnCollisionEnter(Collision col)

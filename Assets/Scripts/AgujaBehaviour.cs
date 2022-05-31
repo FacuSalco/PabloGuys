@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class AgujaBehaviour : MonoBehaviour
 {
-    float rotationspeed;
+    float rotationspeed = 2.5f;
 
      void Start()
     {
-        rotationspeed = 2.5f;
+        
     }
 
 
     void Update()
     {
-        transform.Rotate(0, 0, rotationspeed);
+
+        if (PauseScript.pausa == false) // Si el juego no esta en pausa
+        {
+            transform.Rotate(0, 0, rotationspeed);
+        }
     }
 }

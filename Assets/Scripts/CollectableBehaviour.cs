@@ -17,20 +17,21 @@ public class CollectableBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 0, -1);
-
-        segundos = float.Parse(timer.text);
-        //Pregunar porque me aparce el error (anda igual) en Unity que dice
-        //[FormatException: Input string was not in a correct format]
-
-        if (segundos%2 != 0)
+        if (PauseScript.pausa == false) //Si no esta pausado el juego
         {
-            transform.Translate(0, 0, 0.01f);
-        }
+            transform.Rotate(0, 0, -1);
 
-        else if (segundos%2 == 0)
-        {
-            transform.Translate(0, 0, -0.01f);
+            segundos = float.Parse(timer.text);
+
+            if (segundos % 2 != 0)
+            {
+                transform.Translate(0, 0, 0.01f);
+            }
+
+            else if (segundos % 2 == 0)
+            {
+                transform.Translate(0, 0, -0.01f);
+            }
         }
 
 
