@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class PlayerCollision : MonoBehaviour
 {
     public Text timer, gameOver, gameOverR;
-    public GameObject player, camara, mainCamara, reloj, PlatTrap1, PlatTrap2, PlatTrap3, PlatTrap4, PlatTrap5, PlatTrap6, txtcheckpoint1;
-    float tiempo = 60, restarSegundos = 10, tiempotrampa = 0;
+    public GameObject player, camara, mainCamara, reloj, PlatTrap1, PlatTrap2, PlatTrap3, PlatTrap4, PlatTrap5, PlatTrap6, txtcheckpoint1, resetbutton;
+    float tiempo = 60, restarSegundos = 10, tiempotrampa = 0.5f;
     float spawnx, spawny, spawnz;//Cambiar para que sean las variables donde spawnee y crear nuevas para hacer checkpoints
     public Material rosa;
     int i1, i2, i3, i4, i5, i6;
@@ -19,7 +19,6 @@ public class PlayerCollision : MonoBehaviour
         spawnx = 0;
         spawny = 1.6f;
         spawnz = 0;
-        txtcheckpoint1.SetActive(false);
 
     }
 
@@ -30,19 +29,18 @@ public class PlayerCollision : MonoBehaviour
 
         if (transform.position.y < -1)
         {
-            transform.position = new Vector3(spawnx, spawny, spawnz);
-            transform.eulerAngles = new Vector3(0, 0, 0);
-            tiempo -= restarSegundos;
+            respawn();
         }
 
-        if (tiempo <= 0)
+        if (tiempo < 0)
         {
             gameOver.text = "Game Over";
             gameOverR.text = "Game Over";
             player.SetActive(false);
             mainCamara.SetActive(true);
             timer.text = "";
-            
+            resetbutton.SetActive(true);
+
         }
 
         if (tiempo < 20)
@@ -58,13 +56,18 @@ public class PlayerCollision : MonoBehaviour
         }
     }
 
+    void respawn()
+    {
+        transform.position = new Vector3 (spawnx, spawny, spawnz);
+        transform.eulerAngles = new Vector3 (0, 0, 0);
+        tiempo -= restarSegundos;
+    }
+
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Damage")
         {
-            transform.position = new Vector3(spawnx, spawny, spawnz);
-            transform.eulerAngles = new Vector3(0, 0, 0);
-            tiempo -= restarSegundos;
+            respawn();
         }
 
         if (col.gameObject.tag == "ExtraTime")
@@ -82,9 +85,7 @@ public class PlayerCollision : MonoBehaviour
 
             else
             {
-                transform.position = new Vector3(spawnx, spawny, spawnz);
-                transform.eulerAngles = new Vector3(0, 0, 0);
-               
+                respawn();
             }
 
             i1++;
@@ -100,8 +101,7 @@ public class PlayerCollision : MonoBehaviour
 
             else
             {
-                transform.position = new Vector3(spawnx, spawny, spawnz);
-                transform.eulerAngles = new Vector3(0, 0, 0);
+                respawn();
             }
 
             i2++;
@@ -117,8 +117,7 @@ public class PlayerCollision : MonoBehaviour
 
             else
             {
-                transform.position = new Vector3(spawnx, spawny, spawnz);
-                transform.eulerAngles = new Vector3(0, 0, 0);
+                respawn();
             }
 
             i3++;
@@ -134,8 +133,7 @@ public class PlayerCollision : MonoBehaviour
 
             else
             {
-                transform.position = new Vector3(spawnx, spawny, spawnz);
-                transform.eulerAngles = new Vector3(0, 0, 0);
+                respawn();
             }
 
             i4++;
@@ -151,8 +149,7 @@ public class PlayerCollision : MonoBehaviour
 
             else
             {
-                transform.position = new Vector3(spawnx, spawny, spawnz);
-                transform.eulerAngles = new Vector3(0, 0, 0);
+                respawn();
             }
 
             i5++;
@@ -167,8 +164,7 @@ public class PlayerCollision : MonoBehaviour
             }
             else
             {
-                transform.position = new Vector3(spawnx, spawny, spawnz);
-                transform.eulerAngles = new Vector3(0, 0, 0);
+                respawn();
             }
 
             i6++;
