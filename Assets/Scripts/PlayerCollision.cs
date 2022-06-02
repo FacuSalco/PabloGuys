@@ -12,6 +12,7 @@ public class PlayerCollision : MonoBehaviour
     float spawnx, spawny, spawnz;
     public Material rosa;
     int i1, i2, i3, i4, i5, i6;
+    public static GameObject _player;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class PlayerCollision : MonoBehaviour
         spawnx = 0;
         spawny = 1.6f;
         spawnz = 0;
+        _player = player;
 
     }
 

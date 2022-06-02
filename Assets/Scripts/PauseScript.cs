@@ -33,13 +33,13 @@ public class PauseScript : MonoBehaviour
         if (counter % 2 == 0) //Par se saca pausa
         {
             pausa = false;
-            GetComponent<Text>().text = "II";
+            //GetComponent<Text>().text = "II";
         }
 
         else if (counter % 2 != 0) //Impar se pone pausa
         {
             pausa = true;
-            GetComponent<Text>().text = "▶";
+            //GetComponent<Text>().text = "▶";
         }
     }
 
