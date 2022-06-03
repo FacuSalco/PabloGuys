@@ -10,7 +10,7 @@ public class PauseScript : MonoBehaviour
     //  NullReferenceException: Object reference not set to an instance of an object
 
     public static bool pausa;
-    int counter;
+    int counter, timespaused;
 
     void Start()
     {
@@ -22,6 +22,7 @@ public class PauseScript : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
         {
             Pausa();
+            
         }
     }
 

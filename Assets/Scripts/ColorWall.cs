@@ -22,7 +22,7 @@ public class ColorWall : MonoBehaviour
         {
             if (PlayerCollision._player.GetComponent<Renderer>().material.color == GetComponent<Renderer>().material.color)
             {
-                Destroy(gameObject, 0.5f);
+                Destroy(gameObject, 0);
             }
             
         }

@@ -186,9 +186,21 @@ public class PlayerCollision : MonoBehaviour
             txtcheckpoint1.SetActive(false);
         }
 
+        if (col.gameObject.tag == "CheckPoint2")
+        {
+            spawnx = 0;
+            spawny = 5.01f;
+            spawnz = 132.86f;
+        }
+
         if (col.gameObject.name == "PlatMedio")
         {
             txtcheckpoint1.SetActive(true);
+        }
+
+        if (col.gameObject.name == "RedBullet(Clone)" || col.gameObject.name == "YellowBullet(Clone)" || col.gameObject.name == "GreenBullet(Clone)")
+        {
+            respawn();
         }
 
     }

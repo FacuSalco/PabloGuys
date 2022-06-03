@@ -9,6 +9,7 @@ TagManager:
   - Damage
   - ExtraTime
   - CheckPoint1
+  - CheckPoint2
   layers:
   - Default
   - TransparentFX
