@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerCollision : MonoBehaviour
 {
     public Text timer, gameOver, gameOverR;
-    public GameObject player, camara, mainCamara, reloj, PlatTrap1, PlatTrap2, PlatTrap3, PlatTrap4, PlatTrap5, PlatTrap6, txtcheckpoint1, resetbutton;
+    public GameObject player, camara, mainCamara, reloj, PlatTrap1, PlatTrap2, PlatTrap3, PlatTrap4, PlatTrap5, PlatTrap6, txtcheckpoint1, centerResetButton, topRightResetButton, pauseButton;
     float tiempo = 60, restarSegundos = 10, tiempotrampa = 0.5f;
     float spawnx, spawny, spawnz;
     public Material rosa;
@@ -46,8 +46,9 @@ public class PlayerCollision : MonoBehaviour
             gameOverR.text = "Game Over";
             player.SetActive(false);
             mainCamara.SetActive(true);
-            resetbutton.SetActive(true);
-            //timer.text = "";
+            centerResetButton.SetActive(true);
+            topRightResetButton.SetActive(false);
+            pauseButton.SetActive(false);
 
         }
 
