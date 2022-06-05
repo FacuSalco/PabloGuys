@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed, rotationSpeed, jumpForce;
     public Rigidbody rb;
     bool hasJump;
-    public GameObject CamaraNormal, CamaraSprint;
+    public GameObject CamaraNormal, CamaraSprint, jumpSound;
     float movementSpeedNoShift, movementSpeedShift;
 
     //GetComponent<Renderer>().material = rosa;
@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             transform.Translate(0, 0, movementSpeed);
-        }
+            }
 
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
@@ -63,6 +63,9 @@ public class PlayerMovement : MonoBehaviour
         {
             hasJump = false;
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            GameObject clon;
+            clon = Instantiate(jumpSound);
+            Destroy(clon, 1);
         }
     }
 

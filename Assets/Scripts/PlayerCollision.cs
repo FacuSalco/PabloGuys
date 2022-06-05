@@ -7,13 +7,14 @@ using UnityEngine.UI;
 public class PlayerCollision : MonoBehaviour
 {
     public Text timer, gameOver, gameOverR;
-    public GameObject player, camara, mainCamara, reloj, PlatTrap1, PlatTrap2, PlatTrap3, PlatTrap4, PlatTrap5, PlatTrap6, txtcheckpoint1, centerResetButton, topRightResetButton, pauseButton;
+    public GameObject player, camara, mainCamara, reloj, PlatTrap1, PlatTrap2, PlatTrap3, PlatTrap4, PlatTrap5, PlatTrap6, txtcheckpoint1, centerResetButton, topRightResetButton, pauseButton, collectableSound, damageSound, checkPointSound;
     float tiempo = 60, restarSegundos = 10, tiempotrampa = 0.5f;
     float spawnx, spawny, spawnz;
     public Material rosa;
-    int i1, i2, i3, i4, i5, i6;
+    int i1, i2, i3, i4, i5, i6, i7, i8, i9;
     public static GameObject _player;
     public static Text _timer;
+    public static bool perdio;
 
     void Start()
     {
@@ -22,8 +23,7 @@ public class PlayerCollision : MonoBehaviour
         spawny = 1.6f;
         spawnz = 0;
         _player = player;
-        
-
+        perdio = false;
     }
 
     void Update()
@@ -46,6 +46,7 @@ public class PlayerCollision : MonoBehaviour
 
         if (tiempo < 0) //CUANDO PIERDE
         {
+            perdio = true;
             gameOver.text = "Game Over";
             gameOverR.text = "Game Over";
             player.SetActive(false);
@@ -75,6 +76,9 @@ public class PlayerCollision : MonoBehaviour
         transform.eulerAngles = new Vector3 (0, 0, 0);
         tiempo -= restarSegundos;
         GetComponent<Renderer>().material = rosa;
+        GameObject clon;
+        clon = Instantiate(damageSound);
+        Destroy(clon, 0.3f);
     }
 
     void OnCollisionEnter(Collision col)
@@ -87,6 +91,9 @@ public class PlayerCollision : MonoBehaviour
         if (col.gameObject.tag == "ExtraTime")
         {
             tiempo = 60;
+            GameObject clon;
+            clon = Instantiate(collectableSound);
+            Destroy(clon, 1);
         }
 
         if (col.gameObject.name == "PlatTrap1")
@@ -190,6 +197,15 @@ public class PlayerCollision : MonoBehaviour
             spawny = 5.01f;
             spawnz = 102.97f;
             txtcheckpoint1.SetActive(false);
+
+            if (i7 == 0)
+            {
+                GameObject clon;
+                clon = Instantiate(checkPointSound);
+                Destroy(clon, 1);
+                i7++;
+            }
+            
         }
 
         if (col.gameObject.tag == "CheckPoint2")
@@ -197,6 +213,14 @@ public class PlayerCollision : MonoBehaviour
             spawnx = 0;
             spawny = 5.01f;
             spawnz = 132.86f;
+
+            if (i8 == 0)
+            {
+                GameObject clon;
+                clon = Instantiate(checkPointSound);
+                Destroy(clon, 1);
+                i8++;
+            }
         }
 
         if (col.gameObject.tag == "CheckPoint3")
@@ -204,6 +228,14 @@ public class PlayerCollision : MonoBehaviour
             spawnx = 0;
             spawny = 5.01f;
             spawnz = 215.618f;
+
+            if (i9 == 0)
+            {
+                GameObject clon;
+                clon = Instantiate(checkPointSound);
+                Destroy(clon, 1);
+                i9++;
+            }
         }
 
         if (col.gameObject.name == "PlatMedio")
