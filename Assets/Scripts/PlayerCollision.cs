@@ -13,6 +13,7 @@ public class PlayerCollision : MonoBehaviour
     public Material rosa;
     int i1, i2, i3, i4, i5, i6;
     public static GameObject _player;
+    public static Text _timer;
 
     void Start()
     {
@@ -21,11 +22,14 @@ public class PlayerCollision : MonoBehaviour
         spawny = 1.6f;
         spawnz = 0;
         _player = player;
+        
 
     }
 
     void Update()
     {
+
+        _timer = timer;
 
         if (PauseScript.pausa == false)//Si no esta pausado el juego
         {
@@ -70,6 +74,7 @@ public class PlayerCollision : MonoBehaviour
         transform.position = new Vector3 (spawnx, spawny, spawnz);
         transform.eulerAngles = new Vector3 (0, 0, 0);
         tiempo -= restarSegundos;
+        GetComponent<Renderer>().material = rosa;
     }
 
     void OnCollisionEnter(Collision col)
@@ -192,6 +197,13 @@ public class PlayerCollision : MonoBehaviour
             spawnx = 0;
             spawny = 5.01f;
             spawnz = 132.86f;
+        }
+
+        if (col.gameObject.tag == "CheckPoint3")
+        {
+            spawnx = 0;
+            spawny = 5.01f;
+            spawnz = 215.618f;
         }
 
         if (col.gameObject.name == "PlatMedio")

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CollectableBehaviour : MonoBehaviour
 {
-    public Text timer;
+    //public Text timer;
     float segundos;
     
     // Start is called before the first frame update
@@ -21,7 +21,7 @@ public class CollectableBehaviour : MonoBehaviour
         {
             transform.Rotate(0, 0, -1);
 
-            segundos = float.Parse(timer.text);
+            segundos = float.Parse(PlayerCollision._timer.text);
 
             if (segundos % 2 != 0)
             {

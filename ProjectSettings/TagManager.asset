@@ -10,6 +10,7 @@ TagManager:
   - ExtraTime
   - CheckPoint1
   - CheckPoint2
+  - CheckPoint3
   layers:
   - Default
   - TransparentFX
