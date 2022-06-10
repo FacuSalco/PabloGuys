@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class PlayerCollision : MonoBehaviour
 {
     public Text timer, gameOver, gameOverR;
-    public GameObject player, camara, mainCamara, reloj, PlatTrap1, PlatTrap2, PlatTrap3, PlatTrap4, PlatTrap5, PlatTrap6, txtcheckpoint1, centerResetButton, topRightResetButton, pauseButton, collectableSound, damageSound, checkPointSound;
+    public GameObject player, camara, mainCamara, reloj, PlatTrap1, PlatTrap2, PlatTrap3, PlatTrap4, PlatTrap5, PlatTrap6, txtcheckpoint1, centerResetButton, topRightResetButton, pauseButton, collectableSound, damageSound, checkPointSound, destroySound;
     float tiempo = 60, restarSegundos = 10, tiempotrampa = 0.5f;
     float spawnx, spawny, spawnz;
     public Material rosa;
     int i1, i2, i3, i4, i5, i6, i7, i8, i9;
-    public static GameObject _player;
+    public static GameObject _player, _destroySound;
     public static Text _timer;
     public static bool perdio;
 
@@ -24,6 +24,7 @@ public class PlayerCollision : MonoBehaviour
         spawnz = 0;
         _player = player;
         perdio = false;
+        _destroySound = destroySound;
     }
 
     void Update()
@@ -68,6 +69,12 @@ public class PlayerCollision : MonoBehaviour
         {
             reloj.SetActive(false);
         }
+    }
+
+
+    public static void _respawn()
+    {
+        _respawn();
     }
 
     void respawn()

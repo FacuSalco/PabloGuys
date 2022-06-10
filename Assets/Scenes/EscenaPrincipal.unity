@@ -2127,6 +2127,8 @@ MonoBehaviour:
     type: 3}
   checkPointSound: {fileID: 7942798362808692409, guid: 927a75f1b18ff0f4eb15a7fccc0f4131,
     type: 3}
+  destroySound: {fileID: 7942798362808692409, guid: 02ea39e032c3a5c46ac70b60e3693377,
+    type: 3}
   rosa: {fileID: 2100000, guid: dc041556818550f418cf12ca46ac9814, type: 2}
 --- !u!81 &372576054
 AudioListener:

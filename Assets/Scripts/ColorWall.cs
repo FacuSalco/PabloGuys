@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ColorWall : MonoBehaviour
 {
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,9 @@ public class ColorWall : MonoBehaviour
             if (PlayerCollision._player.GetComponent<Renderer>().material.color == GetComponent<Renderer>().material.color)
             {
                 Destroy(gameObject, 0);
+                GameObject clon;
+                clon = Instantiate(PlayerCollision._destroySound);
+                Destroy(clon, 0.5f);
             }
             
         }
