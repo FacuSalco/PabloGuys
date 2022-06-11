@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerCollision : MonoBehaviour
 {
     public Text timer, gameOver, gameOverR;
-    public GameObject player, camara, mainCamara, reloj, PlatTrap1, PlatTrap2, PlatTrap3, PlatTrap4, PlatTrap5, PlatTrap6, txtcheckpoint1, centerResetButton, topRightResetButton, pauseButton, collectableSound, damageSound, checkPointSound, destroySound;
+    public GameObject player, camara, mainCamara, reloj, PlatTrap1, PlatTrap2, PlatTrap3, PlatTrap4, PlatTrap5, PlatTrap6, txtcheckpoint1, centerResetButton, topRightResetButton, pauseButton, collectableSound, damageSound, checkPointSound, destroySound, changeColor;
     float tiempo = 60, restarSegundos = 10, tiempotrampa = 0.5f;
     float spawnx, spawny, spawnz;
     public Material rosa;
@@ -55,6 +55,7 @@ public class PlayerCollision : MonoBehaviour
             centerResetButton.SetActive(true);
             topRightResetButton.SetActive(false);
             pauseButton.SetActive(false);
+            changeColor.SetActive(false);
 
         }
 
@@ -253,6 +254,18 @@ public class PlayerCollision : MonoBehaviour
         if (col.gameObject.name == "RedBullet(Clone)" || col.gameObject.name == "YellowBullet(Clone)" || col.gameObject.name == "GreenBullet(Clone)")
         {
             respawn();
+        }
+
+        if (col.gameObject.name == "PisoLlegada") //Cuando gana
+        {
+            gameOver.text = "Ganaste";
+            gameOverR.text = "Ganaste";
+            player.SetActive(false);
+            mainCamara.SetActive(true);
+            centerResetButton.SetActive(true);
+            topRightResetButton.SetActive(false);
+            pauseButton.SetActive(false);
+            changeColor.SetActive(false);
         }
 
     }
