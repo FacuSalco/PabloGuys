@@ -2238,6 +2238,8 @@ MonoBehaviour:
   destroySound: {fileID: 7942798362808692409, guid: 02ea39e032c3a5c46ac70b60e3693377,
     type: 3}
   changeColor: {fileID: 725006851}
+  winningSound: {fileID: 7942798362808692409, guid: e7354d5e18a6608409ea77c6fb6d5921,
+    type: 3}
   rosa: {fileID: 2100000, guid: dc041556818550f418cf12ca46ac9814, type: 2}
 --- !u!81 &372576054
 AudioListener:
