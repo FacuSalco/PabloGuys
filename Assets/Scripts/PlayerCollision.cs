@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerCollision : MonoBehaviour
 {
     public Text timer, gameOver, gameOverR;
-    public GameObject player, camara, mainCamara, reloj, PlatTrap1, PlatTrap2, PlatTrap3, PlatTrap4, PlatTrap5, PlatTrap6, txtcheckpoint1, centerResetButton, topRightResetButton, pauseButton, collectableSound, damageSound, checkPointSound, destroySound, changeColor, winningSound;
+    public GameObject player, camara, mainCamara, reloj, PlatTrap1, PlatTrap2, PlatTrap3, PlatTrap4, PlatTrap5, PlatTrap6, txtcheckpoint1, centerResetButton, topRightResetButton, pauseButton, collectableSound, damageSound, checkPointSound, destroySound, changeColor, winningSound, spawner, confeti;
     float tiempo = 60, restarSegundos = 10, tiempotrampa = 0.5f;
     float spawnx, spawny, spawnz;
     public Material rosa;
@@ -269,6 +269,12 @@ public class PlayerCollision : MonoBehaviour
             GameObject clon;
             clon = Instantiate(winningSound);
             Destroy(clon, 4);
+            for (int i = 0; i < 50; i++)
+            {
+                GameObject confeticlon;
+                confeticlon = Instantiate(confeti, spawner.transform.position, spawner.transform.rotation);
+                Destroy(confeticlon, 4);
+            }
         }
 
     }
