@@ -424,7 +424,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: aa421293ea923114f8b9bcce50e57759, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.06
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2080,7 +2080,6 @@ GameObject:
   - component: {fileID: 372576052}
   - component: {fileID: 372576047}
   - component: {fileID: 372576053}
-  - component: {fileID: 372576054}
   - component: {fileID: 372576055}
   m_Layer: 0
   m_Name: CapsulePlayer
@@ -2241,16 +2240,8 @@ MonoBehaviour:
   winningSound: {fileID: 7942798362808692409, guid: e7354d5e18a6608409ea77c6fb6d5921,
     type: 3}
   spawner: {fileID: 1976042110}
-  confeti: {fileID: 3624670434172734465, guid: 0c04e40ea0a10724aa375e7188422885, type: 3}
+  confeti: {fileID: 56564976215207165, guid: 0c04e40ea0a10724aa375e7188422885, type: 3}
   rosa: {fileID: 2100000, guid: dc041556818550f418cf12ca46ac9814, type: 2}
---- !u!81 &372576054
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372576046}
-  m_Enabled: 0
 --- !u!114 &372576055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13565,7 +13556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1976042111}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: SpawnerConfeti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
