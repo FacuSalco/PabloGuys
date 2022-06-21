@@ -106,7 +106,7 @@ public class PlayerCollision : MonoBehaviour
 
         if (col.gameObject.name == "PlatTrap1")
         {
-            PlatTrap1.GetComponent<Renderer>().material = rosa;
+            //PlatTrap1.GetComponent<Renderer>().material = rosa;
             if (i1 > 0)
             {
                 Destroy(PlatTrap1, tiempotrampa);
@@ -122,7 +122,7 @@ public class PlayerCollision : MonoBehaviour
 
         if (col.gameObject.name == "PlatTrap2")
         {
-            PlatTrap2.GetComponent<Renderer>().material = rosa;
+            //PlatTrap2.GetComponent<Renderer>().material = rosa;
             if (i2 > 0)
             {
                 Destroy(PlatTrap2, tiempotrampa);
@@ -138,7 +138,7 @@ public class PlayerCollision : MonoBehaviour
 
         if (col.gameObject.name == "PlatTrap3")
         {
-            PlatTrap3.GetComponent<Renderer>().material = rosa;
+            //PlatTrap3.GetComponent<Renderer>().material = rosa;
             if (i3 > 0)
             {
                 Destroy(PlatTrap3, tiempotrampa);
@@ -154,7 +154,7 @@ public class PlayerCollision : MonoBehaviour
 
         if (col.gameObject.name == "PlatTrap4")
         {
-            PlatTrap4.GetComponent<Renderer>().material = rosa;
+            //PlatTrap4.GetComponent<Renderer>().material = rosa;
             if (i4 > 0)
             {
                 Destroy(PlatTrap4, tiempotrampa);
@@ -170,7 +170,7 @@ public class PlayerCollision : MonoBehaviour
 
         if (col.gameObject.name == "PlatTrap5")
         {
-            PlatTrap5.GetComponent<Renderer>().material = rosa;
+            //PlatTrap5.GetComponent<Renderer>().material = rosa;
             if (i5 > 0)
             {
                 Destroy(PlatTrap5, tiempotrampa);
@@ -186,7 +186,7 @@ public class PlayerCollision : MonoBehaviour
 
         if (col.gameObject.name == "PlatTrap6")
         {
-            PlatTrap6.GetComponent<Renderer>().material = rosa;
+            //PlatTrap6.GetComponent<Renderer>().material = rosa;
             if (i6 > 0)
             {
                 Destroy(PlatTrap6, tiempotrampa);
