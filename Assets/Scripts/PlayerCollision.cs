@@ -7,7 +7,9 @@ using UnityEngine.UI;
 public class PlayerCollision : MonoBehaviour
 {
     public Text timer, gameOver, gameOverR;
-    public GameObject player, camara, mainCamara, reloj, PlatTrap1, PlatTrap2, PlatTrap3, PlatTrap4, PlatTrap5, PlatTrap6, txtcheckpoint1, centerResetButton, topRightResetButton, pauseButton, collectableSound, damageSound, checkPointSound, destroySound, changeColor, winningSound, spawner, confeti;
+    public GameObject player, camara, mainCamara, reloj, PlatTrap1, PlatTrap2, PlatTrap3, PlatTrap4, PlatTrap5, PlatTrap6;
+    public GameObject txtcheckpoint1, centerResetButton, topRightResetButton, pauseButton, collectableSound, damageSound;
+    public GameObject checkPointSound, destroySound, changeColor, winningSound, spawner, confeti, checkAgarrado1, checkAgarrado2, checkAgarrado3, check1, check2, check3;
     float tiempo = 60, restarSegundos = 10, tiempotrampa = 0.5f;
     float spawnx, spawny, spawnz;
     public Material rosa;
@@ -205,6 +207,8 @@ public class PlayerCollision : MonoBehaviour
             spawny = 5.01f;
             spawnz = 102.97f;
             txtcheckpoint1.SetActive(false);
+            check1.SetActive(false);
+            checkAgarrado1.SetActive(true);
 
             if (i7 == 0)
             {
@@ -221,6 +225,8 @@ public class PlayerCollision : MonoBehaviour
             spawnx = 0;
             spawny = 5.01f;
             spawnz = 132.86f;
+            check2.SetActive(false);
+            checkAgarrado2.SetActive(true);
 
             if (i8 == 0)
             {
@@ -236,6 +242,8 @@ public class PlayerCollision : MonoBehaviour
             spawnx = 0;
             spawny = 5.01f;
             spawnz = 215.618f;
+            check3.SetActive(false);
+            checkAgarrado3.SetActive(true);
 
             if (i9 == 0)
             {
