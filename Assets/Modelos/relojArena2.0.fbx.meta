@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a5e5c06aada01f449b26f6e5eafd2625
+guid: d78edd8cd986ead4b9f1a0e9505fc151
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -16,7 +16,17 @@ ModelImporter:
     3300002: Cylinder.006
     4300000: Cylinder.002
     4300002: Cylinder.006
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Paleta8x8
+    second: {fileID: 2100000, guid: a70f32166f8fba545b899440f93ca273, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Paleta_Colores
+    second: {fileID: 2800000, guid: 61283696fef46f041b9702b9707414a2, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
