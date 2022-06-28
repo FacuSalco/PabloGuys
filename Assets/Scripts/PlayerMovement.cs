@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed, rotationSpeed, jumpForce;
     public Rigidbody rb;
     bool hasJump;
-    public GameObject CamaraNormal, CamaraSprint, jumpSound;
+    public GameObject CamaraNormal, jumpSound;
     float movementSpeedNoShift, movementSpeedShift;
 
     //GetComponent<Renderer>().material = rosa;
@@ -28,14 +28,14 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetKey(KeyCode.LeftShift))
         {
-            CamaraSprint.SetActive(true);
-            CamaraNormal.SetActive(false);
+            //CamaraSprint.SetActive(true);
+            //CamaraNormal.SetActive(false);
             movementSpeed = movementSpeedShift;
         }
         else
         {
-            CamaraSprint.SetActive(false);
-            CamaraNormal.SetActive(true);
+            //CamaraSprint.SetActive(false);
+            //CamaraNormal.SetActive(true);
             movementSpeed = movementSpeedNoShift;
         }
 
@@ -49,17 +49,26 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(0, 0, -movementSpeed);
         }
 
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.UpArrow))
         {
-            transform.Rotate(0, rotationSpeed, 0);
+                transform.Translate(-movementSpeed, 0, 0);
         }
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.DownArrow))
         {
-            transform.Rotate(0, -rotationSpeed, 0);
+                transform.Translate(movementSpeed, 0, 0);
         }
+            //if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            //{
+            //    transform.Rotate(0, rotationSpeed, 0);
+            //}
 
-        if (Input.GetKeyDown(KeyCode.Space) && hasJump)
+            //if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            //{
+            //    transform.Rotate(0, -rotationSpeed, 0);
+            //}
+
+            if (Input.GetKeyDown(KeyCode.Space) && hasJump)
         {
             hasJump = false;
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
