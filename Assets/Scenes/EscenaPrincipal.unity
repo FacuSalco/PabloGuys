@@ -2502,7 +2502,7 @@ MonoBehaviour:
   winningSound: {fileID: 7942798362808692409, guid: e7354d5e18a6608409ea77c6fb6d5921,
     type: 3}
   spawner: {fileID: 1976042110}
-  confeti: {fileID: 56564976215207165, guid: 0c04e40ea0a10724aa375e7188422885, type: 3}
+  confeti: {fileID: 8939053519443943595, guid: fd5630d64e6bfde4dba9179c05c32554, type: 3}
   checkAgarrado1: {fileID: 2048654843}
   checkAgarrado2: {fileID: 188240722}
   checkAgarrado3: {fileID: 446244602}
@@ -9881,6 +9881,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e4c884059d1e69343ab1de969b83185e, type: 3}
       propertyPath: m_TagString
       value: CheckPoint1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e4c884059d1e69343ab1de969b83185e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: e4c884059d1e69343ab1de969b83185e, type: 3}
       propertyPath: m_TagString

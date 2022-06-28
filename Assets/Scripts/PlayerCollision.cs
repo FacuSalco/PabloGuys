@@ -277,7 +277,7 @@ public class PlayerCollision : MonoBehaviour
             GameObject clon;
             clon = Instantiate(winningSound);
             Destroy(clon, 4);
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 25; i++)
             {
                 GameObject confeticlon;
                 confeticlon = Instantiate(confeti, spawner.transform.position, spawner.transform.rotation);
